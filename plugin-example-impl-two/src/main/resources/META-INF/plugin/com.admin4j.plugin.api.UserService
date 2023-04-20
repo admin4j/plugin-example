@@ -1,0 +1,3 @@
+def=com.admin4j.plugin.example.UserService10Impl
+def2=com.admin4j.plugin.example.UserService11Impl
+def3=com.admin4j.plugin.example.UserService12Impl
