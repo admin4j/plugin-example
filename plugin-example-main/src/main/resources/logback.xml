@@ -36,7 +36,7 @@
 
     <logger name="com" level="debug" additivity="false">
         <appender-ref ref="STDOUT" />
-        <appender-ref ref="file" />
+<!--        <appender-ref ref="file" />-->
     </logger>
 
     <!-- 日志输出级别 -->
