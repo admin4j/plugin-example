@@ -4,6 +4,7 @@ import com.admin4j.plugin.ExtensionLoader;
 import com.admin4j.plugin.api.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author andanyang
@@ -12,6 +13,8 @@ import org.slf4j.LoggerFactory;
 public class App {
 
    static Logger logger = LoggerFactory.getLogger(App.class);
+
+
 
    static int i = 0;
     public static void main(String[] args) {
@@ -26,6 +29,10 @@ public class App {
 
         userService = ExtensionLoader.getExtensionLoader(UserService.class).getExtension("def");
         testBean(userService);
+
+        ClassLoader classLoader = userService.getClass().getClassLoader();
+        System.out.println("classLoader = " + classLoader);
+        System.out.println("classLoader getParent = " + classLoader.getParent());
 
         userService = ExtensionLoader.getExtensionLoader(UserService.class).getExtension("def2");
         testBean(userService);
