@@ -12,7 +12,7 @@
 
     <groupId>com.admin4j</groupId>
     <artifactId>plugin-example</artifactId>
-    <version>1.1</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     <modules>
         <module>plugin-example-api</module>
@@ -22,6 +22,7 @@
     </modules>
 
     <properties>
+        <revision>1.1</revision>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,8 +32,32 @@
         <dependency>
             <groupId>com.admin4j</groupId>
             <artifactId>admin4j-spring-web-common</artifactId>
-            <version>0.0.5</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.admin4j</groupId>
+                <artifactId>plugin-example-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.admin4j</groupId>
+                <artifactId>plugin-example-impl-one</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.admin4j</groupId>
+                <artifactId>plugin-example-impl-two</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.admin4j</groupId>
+                <artifactId>plugin-example-main</artifactId>
+                <version>${revision}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
