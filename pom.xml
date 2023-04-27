@@ -6,13 +6,13 @@
 
     <parent>
         <groupId>com.admin4j</groupId>
-        <artifactId>framework</artifactId>
+        <artifactId>admin4j-parent</artifactId>
         <version>0.0.5</version>
     </parent>
 
     <groupId>com.admin4j</groupId>
     <artifactId>plugin-example</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>pom</packaging>
     <modules>
         <module>plugin-example-api</module>

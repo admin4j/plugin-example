@@ -1,10 +1,10 @@
 package com.admin4j.plugin.example;
 
 import com.admin4j.plugin.ExtensionLoader;
-import com.admin4j.plugin.api.UserService;
+import com.admin4j.plugin.example.api.DepartService;
+import com.admin4j.plugin.example.api.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author andanyang
@@ -12,17 +12,17 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class App {
 
-   static Logger logger = LoggerFactory.getLogger(App.class);
+    static Logger logger = LoggerFactory.getLogger(App.class);
 
 
+    static int i = 0;
 
-   static int i = 0;
     public static void main(String[] args) {
 
-        logger.debug("ClassLoader = {}" , Thread.currentThread().getContextClassLoader());
+        logger.debug("ClassLoader = {}", Thread.currentThread().getContextClassLoader());
 
         //设置环境变量
-        //System.setProperty("PLUGIN_PATH", "C:\\Users\\andanyang\\Desktop\\plugin-java\\plugin");
+        System.setProperty("PLUGIN_PATH", "C:\\Users\\andanyang\\Desktop\\plugin-java\\plugin");
 
 
         UserService userService;
@@ -34,15 +34,21 @@ public class App {
         System.out.println("classLoader = " + classLoader);
         System.out.println("classLoader getParent = " + classLoader.getParent());
 
-        userService = ExtensionLoader.getExtensionLoader(UserService.class).getExtension("def2");
-        testBean(userService);
-
-        userService = ExtensionLoader.getExtensionLoader(UserService.class).getExtension("def3");
+        userService = ExtensionLoader.getExtensionLoader(UserService.class).getExtension("app-01");
         testBean(userService);
 
 
-        userService = ExtensionLoader.getExtensionLoader(UserService.class).getDefaultExtension();
-        testBean(userService);
+        DepartService departService;
+        departService = ExtensionLoader.getExtensionLoader(DepartService.class).getDefaultExtension();
+
+        String test1 = departService.print("test1");
+        System.out.println("test1 = " + test1);
+
+
+        departService = ExtensionLoader.getExtensionLoader(DepartService.class).getExtension("app-01");
+
+        test1 = departService.print("test2");
+        System.out.println("test1 = " + test1);
     }
 
     private static void testBean(UserService def) {

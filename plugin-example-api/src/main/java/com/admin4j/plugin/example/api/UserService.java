@@ -1,7 +1,7 @@
-package com.admin4j.plugin.api;
+package com.admin4j.plugin.example.api;
 
 
-import com.admin4j.plugin.anno.SPI;
+import com.admin4j.api.anno.SPI;
 
 /**
  * @author andanyang
@@ -11,5 +11,6 @@ import com.admin4j.plugin.anno.SPI;
 public interface UserService {
 
     String getUserName();
+
     String setUserName(String username);
 }

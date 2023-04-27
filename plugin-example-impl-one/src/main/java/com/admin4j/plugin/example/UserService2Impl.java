@@ -1,6 +1,6 @@
 package com.admin4j.plugin.example;
 
-import com.admin4j.plugin.api.UserService;
+import com.admin4j.plugin.example.api.UserService;
 
 /**
  * @author andanyang
@@ -9,6 +9,7 @@ import com.admin4j.plugin.api.UserService;
 public class UserService2Impl implements UserService {
 
     private String username;
+
     @Override
     public String getUserName() {
         return username;
@@ -16,7 +17,7 @@ public class UserService2Impl implements UserService {
 
     @Override
     public String setUserName(String username) {
-          this.username = username;
-          return  username + this.getClass().getName();
+        this.username = username;
+        return username + this.getClass().getName();
     }
 }

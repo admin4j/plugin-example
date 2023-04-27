@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-    <plugins name="app-01" version="1.0.0">
+    <plugins name="def" version="1.0.0">
         <plugin interface="com.admin4j.plugin.example.api.UserService"
-                implementation="com.admin4j.plugin.example.UserService1Impl"/>
+                implementation="com.admin4j.plugin.example.UserService10Impl"/>
         <plugin interface="com.admin4j.plugin.example.api.DepartService"
-                implementation="com.admin4j.plugin.example.DepartServiceOneImpl"/>
+                implementation="com.admin4j.plugin.example.DepartServiceTwoImpl"/>
     </plugins>
 </configuration>
